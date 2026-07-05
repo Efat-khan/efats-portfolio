@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0C2C1C"/>
+      <stop offset="1" stop-color="#05130C"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="520" fill="url(#g)"/>
+  <g fill="#F4EFE3" opacity="0.9">
+    <circle cx="260" cy="205" r="95"/>
+    <path d="M110 470c0-95 67-160 150-160s150 65 150 160z"/>
+  </g>
+  <text x="260" y="500" text-anchor="middle" font-family="Archivo, sans-serif" font-size="20" fill="#FDBA74" opacity="0.8">REPLACE WITH efat.png</text>
+</svg>
