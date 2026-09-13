@@ -1,13 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
-import { Star, ArrowUpRight } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Star, ArrowUpRight, X } from "lucide-react";
 import { Github } from "./BrandIcons";
 import Reveal from "./Reveal";
-import { projects } from "@/lib/data";
+import { projects, type Project } from "@/lib/data";
 
 export default function Projects() {
+  const [selected, setSelected] = useState<Project | null>(null);
+
+  useEffect(() => {
+    if (!selected) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [selected]);
+
   return (
     <section id="projects" className="relative bg-cream text-forest-900 py-24 md:py-32">
       <div className="pointer-events-none absolute bottom-16 left-8 h-24 w-40 dotted-path text-forest-900/10" />
@@ -43,13 +63,18 @@ export default function Projects() {
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
               <article className="card-cream group h-full overflow-hidden rounded-3xl border border-forest-900/5 shadow-sm">
                 {/* image */}
-                <div className="relative aspect-[16/11] overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setSelected(p)}
+                  aria-label={`View ${p.title} preview, larger`}
+                  className="relative block aspect-[16/11] w-full cursor-zoom-in appearance-none overflow-hidden border-0 bg-transparent p-0 text-left"
+                >
                   <Image
                     src={p.image}
                     alt={`${p.title} preview`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="project-card-image object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-950/40 to-transparent" />
                   {/* rating badge */}
@@ -61,7 +86,7 @@ export default function Projects() {
                   <span className="absolute bottom-3 left-3 rounded-full bg-orange px-3 py-1 text-xs font-semibold text-forest-950">
                     {p.category}
                   </span>
-                </div>
+                </button>
 
                 {/* body */}
                 <div className="p-5">
@@ -113,6 +138,44 @@ export default function Projects() {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-forest-950/90 p-4 backdrop-blur-sm sm:p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setSelected(null)}
+          >
+            <motion.div
+              className="relative flex h-[85vh] w-[92vw] max-w-5xl items-center justify-center overflow-hidden rounded-2xl bg-cream-card shadow-2xl"
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              transition={{ type: "spring", damping: 28, stiffness: 320 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="Close preview"
+                className="absolute top-4 right-4 z-10 grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-forest-950/85 text-cream transition-colors hover:bg-orange hover:text-forest-950"
+              >
+                <X size={18} strokeWidth={2.4} />
+              </button>
+              <Image
+                src={selected.image}
+                alt={`${selected.title} full preview`}
+                fill
+                sizes="92vw"
+                className="object-contain"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
