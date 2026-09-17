@@ -175,15 +175,6 @@ export const projects: Project[] = [
     tools: ["Next.js", "MongoDB", "AWS"],
     image: "/image/Job-Portal.png",
   },
-  {
-    title: "Society Management",
-    category: "Web Platform",
-    rating: "4.6",
-    description:
-      "Community management system for residential societies with dedicated member portals.",
-    tools: ["React", "Node.js", "MySQL"],
-    image: "/image/Society-web.png",
-  },
 ];
 
 export type Experience = {
