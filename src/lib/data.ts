@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       "Automation, industry and institute website for MotherTrade BD with a modern design and a complete management system.",
     tools: ["PHP", "Laravel", "MySQL", "React", "JavaScript"],
-    image: "/image/mta.png",
+    image: "/image/mta.jpg",
     link: "https://www.mothertradebd.com/",
   },
   {
