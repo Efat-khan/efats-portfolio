@@ -119,13 +119,13 @@ export const projects: Project[] = [
     link: "https://bbiq.ca/",
   },
   {
-    title: "Samia Akter Portfolio",
+    title: "Portfolio",
     category: "Portfolio",
     rating: "4.7",
     description:
       "Personal portfolio website showcasing projects, skills and experience with a clean, modern design.",
     tools: ["Next.js", "Tailwind CSS", "React"],
-    image: "/image/samia-portfolio.jpg",
+    image: "/image/efatportfolo.jpg",
     link: "https://samia-akter-portfolio.vercel.app/",
   },
   {
@@ -156,24 +156,6 @@ export const projects: Project[] = [
       "Full-stack e-commerce solution with product management, shopping cart, and secure checkout flow.",
     tools: ["Next.js", "Stripe", "PostgreSQL"],
     image: "/image/ecom.png",
-  },
-  {
-    title: "Health & Wellness Site",
-    category: "Web Platform",
-    rating: "4.7",
-    description:
-      "Health-focused web application with appointment booking and detailed doctor profiles.",
-    tools: ["React", "Node.js", "Firebase"],
-    image: "/image/helth-web.png",
-  },
-  {
-    title: "Job Portal",
-    category: "Web Platform",
-    rating: "4.7",
-    description:
-      "Job listing and application platform connecting employers with candidates.",
-    tools: ["Next.js", "MongoDB", "AWS"],
-    image: "/image/Job-Portal.png",
   },
 ];
 
