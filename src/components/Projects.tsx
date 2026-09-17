@@ -125,12 +125,6 @@ export default function Projects() {
                     ) : (
                       <span className="text-sm font-semibold text-forest-700/55">{p.category}</span>
                     )}
-                    <motion.span
-                      whileHover={{ rotate: 45 }}
-                      className="grid h-8 w-8 place-items-center rounded-full bg-orange/15 text-orange"
-                    >
-                      <ArrowUpRight size={16} strokeWidth={2.4} />
-                    </motion.span>
                   </div>
                 </div>
               </article>
@@ -149,28 +143,29 @@ export default function Projects() {
             transition={{ duration: 0.2 }}
             onClick={() => setSelected(null)}
           >
+            <button
+              type="button"
+              onClick={() => setSelected(null)}
+              aria-label="Close preview"
+              className="fixed top-4 right-4 z-10 grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-forest-950/85 text-cream transition-colors hover:bg-orange hover:text-forest-950 sm:top-8 sm:right-8"
+            >
+              <X size={18} strokeWidth={2.4} />
+            </button>
             <motion.div
-              className="relative flex h-[85vh] w-[92vw] max-w-5xl items-center justify-center overflow-hidden rounded-2xl bg-cream-card shadow-2xl"
+              className="relative max-h-[90vh] w-[92vw] max-w-3xl overflow-y-auto rounded-2xl shadow-2xl"
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ type: "spring", damping: 28, stiffness: 320 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                type="button"
-                onClick={() => setSelected(null)}
-                aria-label="Close preview"
-                className="absolute top-4 right-4 z-10 grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-forest-950/85 text-cream transition-colors hover:bg-orange hover:text-forest-950"
-              >
-                <X size={18} strokeWidth={2.4} />
-              </button>
               <Image
                 src={selected.image}
                 alt={`${selected.title} full preview`}
-                fill
+                width={1600}
+                height={2000}
                 sizes="92vw"
-                className="object-contain"
+                className="block h-auto w-full"
               />
             </motion.div>
           </motion.div>

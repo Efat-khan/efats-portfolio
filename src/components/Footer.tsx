@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="mt-14 pt-6 border-t border-cream/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs font-mono text-cream/35 tracking-wide">
-            © {new Date().getFullYear()} Efat Khan · Built with Next.js, Tailwind &amp; Motion
+            © {new Date().getFullYear()} Efat Khan
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

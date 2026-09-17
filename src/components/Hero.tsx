@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import { Github, Linkedin } from "./BrandIcons";
 import { profile } from "@/lib/data";
 
@@ -71,6 +71,14 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-xl btn-ghost px-6 py-3.5 text-sm font-semibold"
             >
               Get in Touch
+            </a>
+            <a
+              href="/image/efat_khan_CV.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-xl btn-ghost px-6 py-3.5 text-sm font-semibold"
+            >
+              Download CV
+              <Download size={16} strokeWidth={2.4} />
             </a>
           </motion.div>
 

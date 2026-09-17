@@ -15,7 +15,7 @@ export const profile = {
 export const stats = [
   { value: 5, suffix: "+", label: "Years Building Software" },
   { value: 25, suffix: "+", label: "Projects Delivered" },
-  { value: 4, suffix: "", label: "Engineering Roles" },
+  { value: 2, suffix: "", label: "Research Experience" },
 ];
 
 export const skills = [
@@ -45,35 +45,88 @@ export const projects: Project[] = [
     description:
       "Full-scale multi-phase recruitment platform for the Bangladesh–Japan Exchange Training program. AI-based CV scoring, coding tests, automated video interviews, Manabo API language testing, and configurable pipelines across nine selection phases.",
     tools: ["Next.js", "TypeScript", "Prisma 6", "NextAuth v5", "Vercel AI SDK", "Docker"],
-    image: "/image/bjet.png",
+    image: "/image/bjet.jpg",
+    link: "https://remotepool.sagbrain.com/en/bjet",
   },
   {
-    title: "Wakuwaku Link",
-    category: "AI / EdTech",
+    title: "RemotePool",
+    category: "AI / Automation",
+    rating: "4.9",
+    description:
+      "Remote recruitment and exchange program platform powering multi-phase candidate pipelines, assessments and program management for international training programs like B-JET.",
+    tools: ["Next.js", "TypeScript", "Prisma 6", "NextAuth v5", "Docker"],
+    image: "/image/remotepool.jpg",
+    link: "https://remotepool.sagbrain.com/",
+  },
+  {
+    title: "HexagonBD Platform",
+    category: "Web Platform",
     rating: "4.8",
     description:
-      "Japanese language learning platform for learners and corporate clients. Structured N5–N1 courses, live lessons, AI-based speech & writing evaluation, progress tracking and certification.",
-    tools: ["FastAPI", "React", "PostgreSQL", "SQLAlchemy", "Neon DB", "Docker"],
-    image: "/image/wakuwaku.png",
-    link: "https://github.com/raihan-sagbrain/wakuwakulink",
+      "Digital platform for HexagonBD with custom features and third-party integrations.",
+    tools: ["Next.js", "Tailwind", "REST API"],
+    image: "/image/screencapture-hexagonbd-2026-05-10-11_53_57.png",
+    link: "https://hexagonbd.com/",
   },
   {
-    title: "E-Commerce Platform",
-    category: "E-Commerce",
+    title: "MotherTrade BD",
+    category: "Web Platform",
     rating: "4.7",
     description:
-      "Full-stack e-commerce solution with product management, shopping cart, and secure checkout flow.",
-    tools: ["Next.js", "Stripe", "PostgreSQL"],
-    image: "/image/ecom.png",
+      "Automation, industry and institute website for MotherTrade BD with a modern design and a complete management system.",
+    tools: ["PHP", "Laravel", "MySQL", "React", "JavaScript"],
+    image: "/image/mta.png",
+    link: "https://www.mothertradebd.com/",
   },
   {
-    title: "E-Commerce Store v2",
-    category: "E-Commerce",
+    title: "Fine Bite",
+    category: "Web Platform",
+    rating: "4.8",
+    description:
+      "Flame-grilled Peri Peri Chicken, born in Finland in 2025. A proven store format now opening to franchise partners across the country.",
+    tools: ["PHP", "Laravel", "MySQL"],
+    image: "/image/finnbite.jpg",
+    link: "https://finnbite.com/",
+  },
+  {
+    title: "Point of Sale System",
+    category: "Dashboard",
+    rating: "4.8",
+    description:
+      "Full-featured POS system with billing, inventory tracking and sales reporting.",
+    tools: ["PHP", "Laravel", "MySQL", "Bootstrap", "JavaScript"],
+    image: "/image/pos.png",
+    link: "https://vela.com.bd/",
+  },
+  {
+    title: "English Language Club",
+    category: "Web Platform",
     rating: "4.6",
     description:
-      "Advanced e-commerce store with multi-vendor support and a real-time analytics dashboard.",
-    tools: ["React", "Node.js", "MongoDB"],
-    image: "/image/ecom-2-web.png",
+      "Membership and event management website for an English Language Club community.",
+    tools: ["PHP", "Laravel", "MySQL", "React", "JavaScript"],
+    image: "/image/elc.jpg",
+    link: "https://elc.duetbd.org/",
+  },
+  {
+    title: "BBIQ",
+    category: "Web Platform",
+    rating: "4.6",
+    description:
+      "Full-featured blog platform with rich-text editing and built-in SEO optimization.",
+    tools: ["PHP", "Laravel", "Livewire", "MySQL", "JavaScript"],
+    image: "/image/bbiq.jpg",
+    link: "https://bbiq.ca/",
+  },
+  {
+    title: "Samia Akter Portfolio",
+    category: "Portfolio",
+    rating: "4.7",
+    description:
+      "Personal portfolio website showcasing projects, skills and experience with a clean, modern design.",
+    tools: ["Next.js", "Tailwind CSS", "React"],
+    image: "/image/samia-portfolio.jpg",
+    link: "https://samia-akter-portfolio.vercel.app/",
   },
   {
     title: "LeefordBD Website",
@@ -83,15 +136,26 @@ export const projects: Project[] = [
       "Full-featured e-commerce website for LeefordBD with product listings, cart and order management.",
     tools: ["PHP", "Laravel", "MySQL", "Bootstrap", "JavaScript"],
     image: "/image/leefordBd.png",
+    link: "https://leefordbd.com/",
   },
   {
-    title: "Blog Platform",
-    category: "Web Platform",
+    title: "E-Commerce Store v2",
+    category: "E-Commerce",
     rating: "4.6",
     description:
-      "Full-featured blog platform with rich-text editing and built-in SEO optimization.",
-    tools: ["PHP", "Laravel", "Livewire", "MySQL", "JavaScript"],
-    image: "/image/blog-web.png",
+      "Advanced e-commerce store with multi-vendor support and a real-time analytics dashboard.",
+    tools: ["PHP", "Laravel", "MySQL", "Bootstrap"],
+    image: "/image/ecom-2-web.png",
+    link: "http://www.masudec.com/",
+  },
+  {
+    title: "E-Commerce Platform",
+    category: "E-Commerce",
+    rating: "4.7",
+    description:
+      "Full-stack e-commerce solution with product management, shopping cart, and secure checkout flow.",
+    tools: ["Next.js", "Stripe", "PostgreSQL"],
+    image: "/image/ecom.png",
   },
   {
     title: "Health & Wellness Site",
@@ -119,42 +183,6 @@ export const projects: Project[] = [
       "Community management system for residential societies with dedicated member portals.",
     tools: ["React", "Node.js", "MySQL"],
     image: "/image/Society-web.png",
-  },
-  {
-    title: "HexagonBD Platform",
-    category: "Web Platform",
-    rating: "4.8",
-    description:
-      "Digital platform for HexagonBD with custom features and third-party integrations.",
-    tools: ["Next.js", "Tailwind", "REST API"],
-    image: "/image/screencapture-hexagonbd-2026-05-10-11_53_57.png",
-  },
-  {
-    title: "MotherTrade BD",
-    category: "Web Platform",
-    rating: "4.7",
-    description:
-      "Automation, industry and institute website for MotherTrade BD with a modern design and a complete management system.",
-    tools: ["PHP", "Laravel", "MySQL", "React", "JavaScript"],
-    image: "/image/mta.png",
-  },
-  {
-    title: "Point of Sale System",
-    category: "Dashboard",
-    rating: "4.8",
-    description:
-      "Full-featured POS system with billing, inventory tracking and sales reporting.",
-    tools: ["PHP", "Laravel", "MySQL", "Bootstrap", "JavaScript"],
-    image: "/image/pos.png",
-  },
-  {
-    title: "English Language Club",
-    category: "Web Platform",
-    rating: "4.6",
-    description:
-      "Membership and event management website for an English Language Club community.",
-    tools: ["PHP", "Laravel", "MySQL", "React", "JavaScript"],
-    image: "/image/english-club.png",
   },
 ];
 
