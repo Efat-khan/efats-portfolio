@@ -163,7 +163,7 @@ export const projects: Project[] = [
     rating: "4.7",
     description:
       "Corporate website for MunSoftIT, a software company, showcasing services, solutions and company profile with a modern design.",
-    tools: ["Next.js", "Tailwind CSS", "React"],
+    tools: ["PHP", "Laravel", "MySQL", "Bootstrap", "JavaScript"],
     image: "/image/munsoftit.jpg",
     link: "https://munsoftit.com/",
   },
