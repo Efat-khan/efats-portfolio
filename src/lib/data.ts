@@ -157,6 +157,16 @@ export const projects: Project[] = [
     tools: ["Next.js", "Stripe", "PostgreSQL"],
     image: "/image/ecom.png",
   },
+  {
+    title: "MunSoftIT",
+    category: "Web Platform",
+    rating: "4.7",
+    description:
+      "Corporate website for MunSoftIT, a software company, showcasing services, solutions and company profile with a modern design.",
+    tools: ["Next.js", "Tailwind CSS", "React"],
+    image: "/image/munsoftit.jpg",
+    link: "https://munsoftit.com/",
+  },
 ];
 
 export type Experience = {
