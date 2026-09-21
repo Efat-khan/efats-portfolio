@@ -35,7 +35,7 @@ export default function Experience() {
               const left = i % 2 === 0;
               return (
                 <div
-                  key={job.role + job.company}
+                  key={`${job.role}-${job.company}-${i}`}
                   className="relative pl-12 md:pl-0 md:grid md:grid-cols-2 md:gap-x-12 md:items-center"
                 >
                   {/* node on the spine */}
@@ -54,9 +54,15 @@ export default function Experience() {
                     }
                   >
                     <div className="rounded-2xl border border-cream/10 bg-forest-850/70 p-6 transition-colors duration-200 hover:border-orange/40">
-                      <div className={`flex items-center gap-2 text-orange ${left ? "md:justify-end" : ""}`}>
+                      <div className={`flex flex-wrap items-center gap-2 text-orange ${left ? "md:justify-end" : ""}`}>
                         <Briefcase size={16} />
                         <span className="text-xs font-mono tracking-wide">{job.period}</span>
+                        {job.current && (
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-orange/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                            <span className="h-1.5 w-1.5 rounded-full bg-orange motion-safe:animate-pulse" />
+                            Currently working
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-display text-xl text-cream mt-2">{job.role}</h3>
                       <p className={`mt-1 flex flex-wrap items-center gap-x-2 text-sm font-semibold text-orange-soft ${left ? "md:justify-end" : ""}`}>

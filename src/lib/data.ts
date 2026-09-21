@@ -175,9 +175,19 @@ export type Experience = {
   period: string;
   location: string;
   description: string;
+  current?: boolean;
 };
 
 export const experience: Experience[] = [
+  {
+    role: "Full-Stack Web Developer",
+    company: "Munsoft IT",
+    period: "Jul 2026 – Present",
+    location: "Bangladesh",
+    description:
+      "Developed and maintained robust full-stack web applications with PHP frameworks. Built dynamic frontend interfaces, scalable backend architectures and seamless database integration for optimized performance. Integrated AI and LLM-powered features into web platforms.",
+    current: true,
+  },
   {
     role: "AI-Driven Software Engineer & Web Developer",
     company: "Sagbrain",
@@ -196,7 +206,7 @@ export const experience: Experience[] = [
   },
   {
     role: "PHP Full-Stack Web Developer",
-    company: "Moonsoftbd",
+    company: "Munsoft IT",
     period: "Oct 2024 – Nov 2025",
     location: "Bangladesh",
     description:
